@@ -40,9 +40,14 @@ public class RestaurantService {
         return restaurants;
     }
 
-   /* public int totalOrderCost(List order){
-          return 0;
-    }*/
+    public int totalOrderCost(List<Item> order){
+        int totalordercost=0;
+        int sizeoforder = order.size();
+        for(int i=0;i<sizeoforder;i++){
+            totalordercost=totalordercost+order.get(i).getPrice();
+        }
+          return totalordercost;
+    }
 
 
 

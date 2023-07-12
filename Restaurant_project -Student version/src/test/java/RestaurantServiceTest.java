@@ -95,12 +95,14 @@ class RestaurantServiceTest {
         restaurant2.addToMenu("burger", 100);
         restaurant2.addToMenu("sandwich", 150);
 
-        Restaurant result = service.findRestaurantByName("Amelie's cafe");
+        Restaurant result = service.findRestaurantByName("Neha cafe");
 
 
        ArrayList<Item> order = new ArrayList<>();
+       order.add(result.getMenu().get(0));
        order.add(result.getMenu().get(1));
        order.add(result.getMenu().get(2));
+       order.add(result.getMenu().get(3));
        int ordertotal = service.totalOrderCost(order);
        System.out.println(ordertotal);
 
